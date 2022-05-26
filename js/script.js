@@ -1,176 +1,204 @@
-$(document).ready(function(){
-	$('.menu_burger').click(function(){
-        $('.menu_burger, .header_menu').toggleClass('active_menu');
-        $('body').toggleClass('lock');
-    });	
-	$('.text').keyup(function(){
+$(document).ready(function () {
+	$('.menu_burger').click(function () {
+		$('.menu_burger, .header_menu').toggleClass('active_menu');
+		$('body').toggleClass('lock');
+	});
+	$('.text').keyup(function () {
 		text = $('.text').val().charCodeAt(0);
 		$('.char').html(text);
 	});
 	oper = '';
 	inptAr = '.input_area, .input_area_2'
-		$('.ac').on('click', function(){
-			$(inptAr).val(function(){
-				return null;
-			});		
+	$('.ac').on('click', function () {
+		$(inptAr).val(function () {
+			return null;
 		});
-		$('.sqr').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
+	});
+	$('.sqr').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.sqr').on('click', function () {
+		$('.oper').val('sqr');
+	});
+	$('.sqrt').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.sqrt').on('click', function () {
+		$('.oper').val('sqrt')
+	});
+	$('.div').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.div').on('click', function div(div, oper) {
+		$(inptAr).val(null);
+		$('.oper').val('/')
+	});
+	$('.seven').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 7;
 		});
-		$('.sqr').on('click', function(){
-			$('.oper').val('sqr');
+	});
+	$('.eight').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 8;
 		});
-		$('.sqrt').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
+	});
+	$('.nine').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 9;
 		});
-		$('.sqrt').on('click', function(){
-			$('.oper').val('sqrt')		
+	});
+	$('.mult').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.mult').on('click', function (oper) {
+		$(inptAr).val(null);
+		$('.oper').val('*')
+	});
+	$('.four').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 4;
 		});
-		$('.div').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
+	});
+	$('.five').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 5;
 		});
-		$('.div').on('click', function div(div, oper){
-			$(inptAr).val(null);
-			$('.oper').val('/')		
+	});
+	$('.six').on('click', function () {
+		$(inptAr).val(function six(i, val) {
+			return val + 6;
 		});
-		$('.seven').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 7;
-			});		
+	});
+	$('.minus').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.minus').on('click', function () {
+		$(inptAr).val(null);
+		$('.oper').val('-')
+	});
+	$('.one').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 1;
 		});
-		$('.eight').on('click', function(){		
-				$(inptAr).val(function(i, val){
-					return val + 8;
-				});			 					
+	});
+	$('.two').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 2;
 		});
-		$('.nine').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 9;
-			});		
+	});
+	$('.three').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 3;
 		});
-		$('.mult').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
+	});
+	$('.plus').click(function () {
+		val = $(inptAr).val();
+		$('.input_boof').val(val);
+	});
+	$('.plus').on('click', function () {
+		$(inptAr).val(null);
+		$('.oper').val('+')
+	});
+	$('.plus-minus').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return -val;
 		});
-		$('.mult').on('click', function(oper){
-			$(inptAr).val(null);
-			$('.oper').val('*')		
+	});
+	$('.zero').on('click', function () {
+		$(inptAr).val(function (i, val) {
+			return val + 0;
 		});
-		$('.four').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 4;
-			});		
-		});
-		$('.five').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 5;
-			});		
-		});
-		$('.six').on('click', function (){
-			$(inptAr).val(function six(i, val){
-				return val + 6;
-			});		
-		});
-		$('.minus').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
-		});
-		$('.minus').on('click', function(){
-			$(inptAr).val(null);
-			$('.oper').val('-')	
-		});
-		$('.one').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 1;
-			});		
-		});
-		$('.two').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 2;
-			});		
-		});
-		$('.three').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 3;
-			});		
-		});
-		$('.plus').click(function(){
-			val = $(inptAr).val();
-			$('.input_boof').val(val);
-		});
-		$('.plus').on('click', function(){
-			$(inptAr).val(null);
-			$('.oper').val('+')
-		});
-		$('.plus-minus').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return -val;
-			});		
-		});
-		$('.zero').on('click', function(){
-			$(inptAr).val(function(i, val){
-				return val + 0;
-			});
-		});
-		$('.dot').on('click', function(){
-			val = $(inptAr).val();
-			$(inptAr).val(val + '.');
-		});
-		$('.equal').on('click', function(equal){
-			x = Number($('.input_boof').val());
-			y = Number($('.input_area').val());	
-			oper = $('.oper').val();		
-			switch (oper){
-				case 'sqr': $('.input_area').val(y**2);
+	});
+	$('.dot').on('click', function () {
+		val = $(inptAr).val();
+		$(inptAr).val(val + '.');
+	});
+	$('.equal').on('click', function (equal) {
+		x = Number($('.input_boof').val());
+		y = Number($('.input_area').val());
+		oper = $('.oper').val();
+		switch (oper) {
+			case 'sqr': $('.input_area').val(y ** 2);
 				break;
-				case 'sqrt': $('.input_area').val(Math.sqrt(y));
+			case 'sqrt': $('.input_area').val(Math.sqrt(y));
 				break;
-				case '/': $('.input_area').val(x/y);
+			case '/': $('.input_area').val(x / y);
 				break;
-				case '*': $('.input_area').val(y*x);
+			case '*': $('.input_area').val(y * x);
 				break;
-				case '-': $('.input_area').val(x-y);
+			case '-': $('.input_area').val(x - y);
 				break;
-				case '+': $('.input_area').val(y+x);
+			case '+': $('.input_area').val(y + x);
 				break;
-				default: $('.input_area').val('Error');
-			}
-		});
-		$('.convert').on('click', function(){
-			x = Number($('.input_area_2').val());
-			selout = $('.sel-out').val();	//Select output
-			selin = $('.sel-in').val();		//Select input	
-			if (selin == 'h'){
-				if (selout == 'h'){
-					$('.input_area_1').val(x);
-				} else if (selout == 'm'){
-					$('.input_area_1').val(x*60);
-				} else if (selout == 's'){
-					$('.input_area_1').val((x*60)*60);
-				} else $('.input_area_1').val('Ошибка');	
-			};
-			if (selin == 'm'){
-				if (selout == 'h'){
-					$('.input_area_1').val(x/60);
-				} else if (selout == 'm'){
-					$('.input_area_1').val(x);
-				} else if (selout == 's'){
-					$('.input_area_1').val(x*60);
-				} else $('.input_area_1').val('Ошибка');
-			}
-			if (selin == 's'){
-				if (selout == 'h'){
-					$('.input_area_1').val((x/60)/60);
-				} else if (selout == 'm'){
-					$('.input_area_1').val(x/60);
-				} else if (selout == 's'){
-					$('.input_area_1').val(x);
-				} else $('.input_area_1').val('Ошибка');
-			}
-		});
-		let dec = 7;
-		console.log((dec).toString(2));
+			default: $('.input_area').val('Error');
+		}
+	});
+	$('.convert').on('click', function () {
+		x = Number($('.input_area_2').val());
+		selout = $('.sel-out').val();	//Select output
+		selin = $('.sel-in').val();		//Select input	
+		if (selin == 'h') {
+			if (selout == 'h') {
+				$('.input_area_1').val(x);
+			} else if (selout == 'm') {
+				$('.input_area_1').val(x * 60);
+			} else if (selout == 's') {
+				$('.input_area_1').val((x * 60) * 60);
+			} else $('.input_area_1').val('Ошибка');
+		};
+		if (selin == 'm') {
+			if (selout == 'h') {
+				$('.input_area_1').val(x / 60);
+			} else if (selout == 'm') {
+				$('.input_area_1').val(x);
+			} else if (selout == 's') {
+				$('.input_area_1').val(x * 60);
+			} else $('.input_area_1').val('Ошибка');
+		}
+		if (selin == 's') {
+			if (selout == 'h') {
+				$('.input_area_1').val((x / 60) / 60);
+			} else if (selout == 'm') {
+				$('.input_area_1').val(x / 60);
+			} else if (selout == 's') {
+				$('.input_area_1').val(x);
+			} else $('.input_area_1').val('Ошибка');
+		}
+	});
+	const $pass_dic = "1234567890ZXCVBNMASDFGHJKLQWERTYUIOPqwertyuiopasdfghjklzxcvbnm!@#$%^&*()_+|?><:~`';/.,";
+	let $dic_size = $pass_dic.length - 1;
+	let $pass_text = $('#pass_text');
+	let $copy_mess = $('#copy_mess')
+	$('#pass_gen').on('click', () => {
+		let $pass_len = Number($('#pass_len').val())
+		if ($pass_len == 0) {
+			alert("Enter password length")
+		}
+		let $pass = ""
+		const d = new Date();
+		let time = d.getTime();
+		for (let i = 0; i < $pass_len; i++) {
+			let rand = Math.floor(Math.random() * time)
+			$pass = $pass + $pass_dic[rand % $dic_size]
+		}
+		$pass_text.html($pass)
+		$copy_mess.html("")
+	})
+	$('#pass_copy').on('click', () => {
+		let $temp = $("<input>");
+		let $text = $pass_text.text()
+		$("body").append($temp);
+		$temp.val($text).select();
+		document.execCommand("copy");
+		$temp.remove();
+		if ($text != "") {
+			$copy_mess.html("Copied")
+		}
+	})
 });
