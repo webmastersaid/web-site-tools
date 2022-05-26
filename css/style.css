@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 }
 body{
-	background-image: url(/img/background.jpg);
+	background-image: url(../img/background.jpg);
 	background-size: cover;
 	height: 100vh;
 	color: whitesmoke;
@@ -58,7 +58,7 @@ div .button_click:hover{
 	margin: 0px auto;
 }
 .header_list{
-	display: flex;
+	display: block;
 	position: relative;
 	z-index: 2;
 }
@@ -87,6 +87,13 @@ div .button_click:hover{
 }
 .header_list li{
 	margin: 10px;
+}
+
+.btn_back {
+	margin: 20px;
+	padding: 8px 12px;
+	border-radius: 12px;
+	background-color: #1E2424;
 }
 @media (max-width: 767px){
 	body.lock{
