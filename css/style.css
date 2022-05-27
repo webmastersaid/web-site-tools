@@ -22,8 +22,7 @@ li {
 	list-style: none;
 }
 
-a,
-a:hover {
+a {
 	text-decoration: none;
 	color: whitesmoke;
 	font-size: 24px;
@@ -148,6 +147,20 @@ div .button_click:hover {
 }
 
 .btn_copy:hover {
+	color: skyblue;
+	opacity: 0.8;
+}
+
+.btn_bmi {
+	margin: 20px;
+	padding: 8px 12px;
+	border-radius: 12px;
+	background-color: #1E2424;
+	color: white;
+	font-size: 20px;
+}
+
+.btn_bmi:hover{
 	color: skyblue;
 	opacity: 0.8;
 }
@@ -298,8 +311,20 @@ div .button_click:hover {
 }
 
 .ptext {
-	height: 40px;
+	height: 30px;
 	width: 80px;
+	padding: 6px;
+	border: solid;
+	border-width: 1px;
+	border-color: skyblue;
+	background-color: transparent;
+	color: whitesmoke;
+	font-size: 30px;
+}
+
+.btext {
+	height: 40px;
+	width: 120px;
 	padding: 6px;
 	border: solid;
 	border-width: 1px;

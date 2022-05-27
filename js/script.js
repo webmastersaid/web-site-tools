@@ -3,8 +3,8 @@ $(document).ready(function () {
 		$('.menu_burger, .header_menu').toggleClass('active_menu');
 		$('body').toggleClass('lock');
 	});
-	$('.text').keyup(function () {
-		text = $('.text').val().charCodeAt(0);
+	$('.ctext').keyup(function () {
+		text = $('.ctext').val().charCodeAt(0);
 		$('.char').html(text);
 	});
 	oper = '';
@@ -119,7 +119,15 @@ $(document).ready(function () {
 		val = $(inptAr).val();
 		$(inptAr).val(val + '.');
 	});
-	$('.equal').on('click', function (equal) {
+	$('.sqr').on('click', () => {
+		y = Number($('.input_area').val())
+		$('.input_area').val(y ** 2)
+	})
+	$('.sqrt').on('click', () => {
+		y = Number($('.input_area').val())
+		$('.input_area').val(Math.sqrt(y))
+	})
+	$('.equal').on('click', () => {
 		x = Number($('.input_boof').val());
 		y = Number($('.input_area').val());
 		oper = $('.oper').val();
@@ -171,21 +179,24 @@ $(document).ready(function () {
 			} else $('.input_area_1').val('Ошибка');
 		}
 	});
-	const $pass_dic = "1234567890ZXCVBNMASDFGHJKLQWERTYUIOPqwertyuiopasdfghjklzxcvbnm!@#$%^&*()_+|?><:~`';/.,";
+	const $pass_dic = "1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	let $dic_size = $pass_dic.length - 1;
 	let $pass_text = $('#pass_text');
 	let $copy_mess = $('#copy_mess')
 	$('#pass_gen').on('click', () => {
+
 		let $pass_len = Number($('#pass_len').val())
 		if ($pass_len == 0) {
 			alert("Enter password length")
 		}
 		let $pass = ""
-		const d = new Date();
-		let time = d.getTime();
+		const data = new Uint32Array(1);
+		const date = new Date();
 		for (let i = 0; i < $pass_len; i++) {
-			let rand = Math.floor(Math.random() * time)
-			$pass = $pass + $pass_dic[rand % $dic_size]
+			self.crypto.getRandomValues(data);
+			let time = date.getTime();
+			let rand = data[0] * time
+			$pass += $pass_dic[rand % $dic_size]
 		}
 		$pass_text.html($pass)
 		$copy_mess.html("")
@@ -200,5 +211,12 @@ $(document).ready(function () {
 		if ($text != "") {
 			$copy_mess.html("Copied")
 		}
+	})
+	$('#btn_bmi_calc').on('click', () => {
+		let h = Number($('#text_bmi_h').val())
+		let w = Number($('#text_bmi_w').val())
+		let sqr = h * h
+		let bmi = w / sqr
+		$('#bmi_text').html(bmi)
 	})
 });
