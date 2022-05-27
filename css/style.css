@@ -306,7 +306,7 @@ div .button_click:hover {
 	border-color: skyblue;
 	background-color: transparent;
 	color: whitesmoke;
-	font-size: 72px;
+	font-size: 68px;
 	text-align: center;
 }
 
@@ -319,7 +319,7 @@ div .button_click:hover {
 	border-color: skyblue;
 	background-color: transparent;
 	color: whitesmoke;
-	font-size: 30px;
+	font-size: 18px;
 }
 
 .btext {
@@ -331,7 +331,7 @@ div .button_click:hover {
 	border-color: skyblue;
 	background-color: transparent;
 	color: whitesmoke;
-	font-size: 40px;
+	font-size: 28px;
 }
 
 .link_img {
