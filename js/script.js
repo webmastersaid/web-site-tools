@@ -186,13 +186,12 @@ $(document).ready(function () {
 	$('#pass_gen').on('click', () => {
 
 		let $pass_len = Number($('#pass_len').val())
-		if ($pass_len == 0) {
-			alert("Enter password length")
-		}
 		let $pass = ""
 		const data = new Uint32Array(1);
 		const date = new Date();
-		if ($pass_len > 200) {
+		if ($pass_len == 0) {
+			alert("Enter password length")
+		} else if ($pass_len > 200) {
 			alert("Password length no more than 200")
 		} else {
 			for (let i = 0; i < $pass_len; i++) {
