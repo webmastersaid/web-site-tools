@@ -13,14 +13,9 @@ body {
 	background-color: #1E2424;
 	background-image: url(../img/background.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: whitesmoke;
-}
-
-footer {
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	transform: translate(-50%, -50%);
 }
 
 ol,
@@ -50,7 +45,6 @@ div .button_click:hover {
 }
 
 .header_body {
-	padding-right: 20px;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -167,7 +161,7 @@ div .button_click:hover {
 	font-size: 20px;
 }
 
-.btn_bmi:hover{
+.btn_bmi:hover {
 	color: skyblue;
 	opacity: 0.8;
 }
@@ -263,12 +257,6 @@ div .button_click:hover {
 
 	.header_link {
 		font-size: 18px;
-	}
-
-	.line {
-		background-color: whitesmoke;
-		height: 1px;
-		width: 100%;
 	}
 }
 
@@ -444,7 +432,7 @@ option {
 	text-decoration: none;
 }
 
-.footer_link:hover{
+.footer_link:hover {
 	color: white;
 	text-decoration: underline;
 }

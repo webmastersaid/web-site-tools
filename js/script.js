@@ -192,23 +192,24 @@ $(document).ready(function () {
 		let $pass = ""
 		const data = new Uint32Array(1);
 		const date = new Date();
-		for (let i = 0; i < $pass_len; i++) {
-			self.crypto.getRandomValues(data);
-			let time = date.getTime();
-			let rand = data[0] * time
-			$pass += $pass_dic[rand % $dic_size]
+		if ($pass_len > 200) {
+			alert("Password length no more than 200")
+		} else {
+			for (let i = 0; i < $pass_len; i++) {
+				self.crypto.getRandomValues(data);
+				let time = date.getTime();
+				let rand = data[0] * time
+				$pass += $pass_dic[rand % $dic_size]
+			}
+			$pass_text.val($pass)
+			$copy_mess.html("")
 		}
-		$pass_text.html($pass)
-		$copy_mess.html("")
 	})
 	$('#pass_copy').on('click', () => {
-		let $temp = $("<input>");
-		let $text = $pass_text.text()
-		$("body").append($temp);
-		$temp.val($text).select();
+		let $val = $pass_text.val()
+		$pass_text.val($val).select();
 		document.execCommand("copy");
-		$temp.remove();
-		if ($text != "") {
+		if ($val != "") {
 			$copy_mess.html("Copied")
 		}
 	})
@@ -217,6 +218,6 @@ $(document).ready(function () {
 		let w = Number($('#text_bmi_w').val())
 		let sqr = h * h
 		let bmi = w / sqr
-		$('#bmi_text').html(bmi)
+		$('#bmi_text').html(bmi.toFixed(2))
 	})
 });
