@@ -10,10 +10,18 @@
 }
 
 body {
+	position: relative;
 	background-image: url(../img/background.jpg);
 	background-size: cover;
 	height: 100vh;
 	color: whitesmoke;
+}
+
+footer {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, -50%);
 }
 
 ol,
@@ -429,4 +437,15 @@ option {
 
 .button_click.plus-minus {
 	background-color: gray;
+}
+
+.footer_link {
+	font-size: 16px;
+	color: white;
+	text-decoration: none;
+}
+
+.footer_link:hover{
+	color: white;
+	text-decoration: underline;
 }
