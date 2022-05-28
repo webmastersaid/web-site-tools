@@ -10,10 +10,9 @@
 }
 
 body {
-	position: relative;
+	background-color: #1E2424;
 	background-image: url(../img/background.jpg);
 	background-size: cover;
-	height: 100vh;
 	color: whitesmoke;
 }
 
