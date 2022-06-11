@@ -180,12 +180,12 @@ $(document).ready(function () {
 		}
 	});
 	const $pass_dic = "1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	let $dic_size = $pass_dic.length - 1;
-	let $pass_text = $('#pass_text');
-	let $copy_mess = $('#copy_mess')
+	const $dic_size = $pass_dic.length - 1;
+	const $pass_text = $('#pass_text');
+	const $copy_mess = $('#copy_mess')
 	$('#pass_gen').on('click', () => {
 
-		let $pass_len = Number($('#pass_len').val())
+		const $pass_len = Number($('#pass_len').val())
 		let $pass = ""
 		const data = new Uint32Array(1);
 		const date = new Date();
@@ -193,6 +193,8 @@ $(document).ready(function () {
 			alert("Enter password length")
 		} else if ($pass_len > 200) {
 			alert("Password length no more than 200")
+		} else if ($pass_len < 8) {
+			alert("Password length no less than 8")
 		} else {
 			for (let i = 0; i < $pass_len; i++) {
 				self.crypto.getRandomValues(data);
@@ -205,23 +207,55 @@ $(document).ready(function () {
 		}
 	})
 	$('#pass_copy').on('click', () => {
-		let $val = $pass_text.val()
-		$pass_text.val($val).select();
-		document.execCommand("copy");
+		const $val = $pass_text.val()
+		$pass_text.val($val).select()
+		document.execCommand("copy")
 		if ($val != "") {
 			$copy_mess.html("Copied")
 		}
 	})
+	const bmi_text = $('#bmi_text')
+	const bmiArr = ['Underweight', 'Normal', 'Overweight', 'Obesity']
+	let bmi_underweight = $('#bmi_underweight')
+	let bmi_normal = $('#bmi_normal')
+	let bmi_overweight = $('#bmi_overweight')
+	let bmi_obesity = $('#bmi_obesity')
+	const bmiUnderweight = (bmi) => {
+		bmi_underweight.val(bmi);
+		bmi_normal.val(0);
+		bmi_overweight.val(0);
+		bmi_obesity.val(0)
+		bmi_text.html(bmiArr[0]);
+	}
+	const bmiNormal = (bmi) => {
+		bmi_underweight.val(0);
+		bmi_normal.val(bmi);
+		bmi_overweight.val(0);
+		bmi_obesity.val(0)
+		bmi_text.html(bmiArr[1]);
+	}
+	const bmiOverweight = (bmi) => {
+		bmi_underweight.val(0);
+		bmi_normal.val(0);
+		bmi_overweight.val(bmi);
+		bmi_obesity.val(0)
+		bmi_text.html(bmiArr[2]);
+	}
+	const bmiObesity = (bmi) => {
+		bmi_underweight.val(0);
+		bmi_normal.val(0);
+		bmi_overweight.val(0);
+		bmi_obesity.val(bmi)
+		bmi_text.html(bmiArr[3]);
+	}
 	$('#btn_bmi_calc').on('click', () => {
-		const bmiArr = ["Underweight", "Normal", "Overweight", "Obesity"];
-		let height = (Number($('#text_bmi_h').val())/100);
-		let weight = Number($('#text_bmi_w').val());
-		let sqr = Math.pow(height,2);
-		let bmi = weight / sqr;
+		const height = (Number($('#text_bmi_h').val()) / 100)
+		const weight = Number($('#text_bmi_w').val())
+		const bmi = weight / Math.pow(height, 2)
 		$('#bmi_num').html(bmi.toFixed(2));
-		(bmi < 18.5) ? $('#bmi_text').html(bmiArr[0]) : '';
-		(bmi >= 18.5 && bmi <= 24.9) ? $('#bmi_text').html(bmiArr[1]) : '';
-		(bmi >= 25 && bmi <= 29.9) ? $('#bmi_text').html(bmiArr[2]) : '';
-		(bmi > 30) ? $('#bmi_text').html(bmiArr[3]) : '';
+		(bmi < 19) ? bmiUnderweight(bmi) : null;
+		(bmi >= 19 && bmi <= 25) ? bmiNormal(bmi) : null;
+		(bmi >= 25 && bmi <= 30) ? bmiOverweight(bmi) : null;
+		(bmi > 30) ? bmiObesity(bmi) : null;
 	})
 });

@@ -166,6 +166,35 @@ div .button_click:hover {
 	opacity: 0.8;
 }
 
+.scroll_box {
+	display: flex;
+	overflow-x: scroll;
+}
+
+.bmi_progress {
+	height: 5px;
+	width: 92px;
+	color: white;
+	padding: 0 2px 0 2px;
+	margin: 0 0 10px 0;
+}
+
+.bg_skyblue {
+	background-color: skyblue;
+}
+
+.bg_green {
+	background-color: green;
+}
+
+.bg_orange {
+	background-color: orange;
+}
+
+.bg_orangered {
+	background-color: orangered;
+}
+
 @media (max-width: 767px) {
 	body.lock {
 		overflow: hidden;

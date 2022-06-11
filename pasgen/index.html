@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Password Generator</title>
 	<meta name="keywords" content="web-tools, web-utils, calculator, generator, converter, ascii, bmi,">
-    <meta name="description" content="Generator of password">
-    <meta property="og:title" content="Password Generator" />
-    <meta property="og:description" content="Generator of password" />
-    <meta property="og:image" content="/img/tools.jpg" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://web-site-tools.netlify.app/pasgen/" />
+	<meta name="description" content="Generator of password">
+	<meta property="og:title" content="Password Generator" />
+	<meta property="og:description" content="Generator of password" />
+	<meta property="og:image" content="/img/tools.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://web-site-tools.netlify.app/pasgen/" />
 	<link rel="icon" href="/img/logo.png" type="image/png">
 	<link rel="shorcut icon" href="/img/logo.png" type="image/png">
 	<link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 	<header class="header">
 		<div class="header_box">
-		<div class="header_body">           
-			<a href="javascript:history.back()" class="btn_back">Back</a>
-			<a href="/" class="btn_back">Home</a>
-		</div>          
-		</div>           
-	</header>		
-	<div class="container">	
+			<div class="header_body">
+				<a href="javascript:history.back()" class="btn_back">Back</a>
+				<a href="/" class="btn_back">Home</a>
+			</div>
+		</div>
+	</header>
+	<div class="container">
 		<h1>Password generator</h1>
-			<br>
-			<br>
+		<br>
+		<br>
 		<div class="char_container">
 			<label for="pass_text">Password output:</label>
 			<br>
@@ -36,18 +38,19 @@
 			<br>
 			<button id="pass_copy" class="btn btn_copy">Copy</button>
 			<span id="copy_mess"></span>
-		</div>		
+		</div>
 		<div class="text_container">
 			<br>
 			<br>
-			<label for="pass_len">Password length (no more than 200): </label>
+			<label for="pass_len">Password length (no less than 8 and no more than 200): </label>
 			<input type="number" id="pass_len" class="ptext">
 			<br>
 			<br>
 			<button type="button" id="pass_gen" class="btn btn_generate">Generate</button>
 		</div>
 	</div>
-<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>	
-<script type="text/javascript" src="/js/script.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
 </body>
+
 </html>

@@ -6,15 +6,15 @@
 	<meta name="viewport" content="width=device-width">
 	<title>BMI</title>
 	<meta name="keywords" content="web-tools, web-utils, calculator, generator, converter, ascii, bmi,">
-    <meta name="description" content="BMI - body mass index">
-    <meta property="og:title" content="BMI">
-    <meta property="og:description" content="BMI - body mass index">
-    <meta property="og:image" content="/img/tools.jpg">
-    <meta property="og:type" content="website" >
-    <meta property="og:url" content="https://web-site-tools.netlify.app/bmi/">
+	<meta name="description" content="BMI - body mass index">
+	<meta property="og:title" content="BMI">
+	<meta property="og:description" content="BMI - body mass index">
+	<meta property="og:image" content="/img/tools.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://web-site-tools.netlify.app/bmi/">
 	<link rel="icon" href="/img/logo.png" type="image/png">
 	<link rel="shorcut icon" href="/img/logo.png" type="image/png">
-	<link href="../css/style.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,11 +30,32 @@
 		<div class="char_container">
 			<h1>BMI</h1>
 		</div>
-		<div class="text_container">
+		<div class="container">
 			<span id="bmi_num" style="font-size: 40px;"></span>
 			<br>
 			<br>
 			<span id="bmi_text" style="font-size: 24px;"></span>
+			<br>
+			<br>
+			<div class="scroll_box">
+				<div>
+					<label for="bmi_underweight">Underweight <br> (less than 19)</label>
+					<progress id="bmi_underweight" class="bmi_progress bg_skyblue" max="19" value="0"></progress>
+				</div>
+				<div>
+					<label for="bmi_normal">Normal <br> (19 - 25)</label>
+					<progress id="bmi_normal" class="bmi_progress bg_green" max="25" value="0"></progress>
+				</div>
+				<div>
+					<label for="bmi_overweight">Overweight <br> (25 - 30)</label>
+					<progress id="bmi_overweight" class="bmi_progress bg_orange" max="30" value="0"></progress>
+				</div>
+				<div>
+					<label for="bmi_obesity">Obesity <br> (more 30)</label>
+					<progress id="bmi_obesity" class="bmi_progress bg_orangered" max="35" value="0"></progress>
+				</div>
+			</div>
+			<span>↔</span>
 			<br>
 			<br>
 			<input type="number" id="text_bmi_h" class="btext" maxlength="3">
@@ -48,8 +69,8 @@
 			<button type="button" id="btn_bmi_calc" class="btn btn_bmi">Calculate</button>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="../js/script.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
 </body>
 
 </html>
