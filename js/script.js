@@ -213,10 +213,15 @@ $(document).ready(function () {
 		}
 	})
 	$('#btn_bmi_calc').on('click', () => {
-		let h = Number($('#text_bmi_h').val())
-		let w = Number($('#text_bmi_w').val())
-		let sqr = h * h
-		let bmi = w / sqr
-		$('#bmi_text').html(bmi.toFixed(2))
+		const bmiArr = ["Underweight", "Normal", "Overweight", "Obesity"];
+		let height = (Number($('#text_bmi_h').val())/100);
+		let weight = Number($('#text_bmi_w').val());
+		let sqr = Math.pow(height,2);
+		let bmi = weight / sqr;
+		$('#bmi_num').html(bmi.toFixed(2));
+		(bmi < 18.5) ? $('#bmi_text').html(bmiArr[0]) : '';
+		(bmi >= 18.5 && bmi <= 24.9) ? $('#bmi_text').html(bmiArr[1]) : '';
+		(bmi >= 25 && bmi <= 29.9) ? $('#bmi_text').html(bmiArr[2]) : '';
+		(bmi > 30) ? $('#bmi_text').html(bmiArr[3]) : '';
 	})
 });

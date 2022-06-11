@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://web-site-tools.netlify.app/bmi/">
 	<link rel="icon" href="/img/logo.png" type="image/png">
 	<link rel="shorcut icon" href="/img/logo.png" type="image/png">
-	<link href="/css/style.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,14 +29,16 @@
 	<div class="container">
 		<div class="char_container">
 			<h1>BMI</h1>
-
 		</div>
 		<div class="text_container">
-			<span id="bmi_text" style="font-size: 40px;"></span>
+			<span id="bmi_num" style="font-size: 40px;"></span>
+			<br>
+			<br>
+			<span id="bmi_text" style="font-size: 24px;"></span>
 			<br>
 			<br>
 			<input type="number" id="text_bmi_h" class="btext" maxlength="3">
-			<label for="bmi_h" style="font-size: 20px;">m</label>
+			<label for="bmi_h" style="font-size: 20px;">cm</label>
 			<br>
 			<br>
 			<input type="number" id="text_bmi_w" class="btext" maxlength="3">
@@ -46,8 +48,8 @@
 			<button type="button" id="btn_bmi_calc" class="btn btn_bmi">Calculate</button>
 		</div>
 	</div>
-	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="/js/script.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
 </body>
 
 </html>
