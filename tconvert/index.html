@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -31,20 +31,20 @@
 			<h1>Time converter</h1>
 			<br>
 			<br>
-			<span style="font-size: 20px;">To: </span>
+			<label for="select_to" class="fs-20">To: </label>
 			<div class="val-container">
-				<select class="sel-out">
+				<select id="select_to" class="sel-out">
 					<option value="h">h</option>
 					<option value="m">m</option>
 					<option value="s">s</option>
 				</select>
-				<input class="input_area_1" readonly>
+				<input class="input_area_1" readonly placeholder="Output">
 			</div>
 			<br>
 			<br>
-			<span style="font-size: 20px;">From: </span>
+			<label for="select_from" class="fs-20">From: </label>
 			<div class="input-container">
-				<select class="sel-in">
+				<select id="select_from" class="sel-in">
 					<option value="h">h</option>
 					<option value="m">m</option>
 					<option value="s">s</option>
@@ -64,7 +64,7 @@
 					<div class="button_click nine">9</div>
 				</span>
 				<span class="btn">
-					<div class="button_click ac">AC</div>
+					<div class="button_click ac">C</div>
 				</span>
 			</div>
 			<div class="button_container">

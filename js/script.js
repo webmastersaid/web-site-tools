@@ -1,184 +1,209 @@
-$(document).ready(function () {
-	$('.menu_burger').click(function () {
-		$('.menu_burger, .header_menu').toggleClass('active_menu');
-		$('body').toggleClass('lock');
-	});
-	$('.ctext').keyup(function () {
+$(() => {
+	// ASCII
+	$('.ctext').on('keyup', () => {
 		text = $('.ctext').val().charCodeAt(0);
 		$('.char').html(text);
 	});
+	// Calculator
 	oper = '';
-	inptAr = '.input_area, .input_area_2'
-	$('.ac').on('click', function () {
-		$(inptAr).val(function () {
-			return null;
-		});
-	});
-	$('.sqr').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.sqr').on('click', function () {
-		$('.oper').val('sqr');
-	});
-	$('.sqrt').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.sqrt').on('click', function () {
-		$('.oper').val('sqrt')
-	});
-	$('.div').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.div').on('click', function div(div, oper) {
-		$(inptAr).val(null);
-		$('.oper').val('/')
-	});
-	$('.seven').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return val + 7;
-		});
-	});
-	$('.eight').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return val + 8;
-		});
-	});
-	$('.nine').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return val + 9;
-		});
-	});
-	$('.mult').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.mult').on('click', function (oper) {
-		$(inptAr).val(null);
-		$('.oper').val('*')
-	});
-	$('.four').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return val + 4;
-		});
-	});
-	$('.five').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return val + 5;
-		});
-	});
-	$('.six').on('click', function () {
-		$(inptAr).val(function six(i, val) {
-			return val + 6;
-		});
-	});
-	$('.minus').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.minus').on('click', function () {
-		$(inptAr).val(null);
-		$('.oper').val('-')
-	});
-	$('.one').on('click', function () {
-		$(inptAr).val(function (i, val) {
+	// calculator and time coverter input area
+	$inputArea = $('.input_area, .input_area_2');
+	$inputBoof = $('.input_boof');
+	$inputOper = $('.input_oper');
+	$('.one').on('click', () => {
+		$inputArea.val((i, val) => {
 			return val + 1;
 		});
 	});
-	$('.two').on('click', function () {
-		$(inptAr).val(function (i, val) {
+	$('.two').on('click', () => {
+		$inputArea.val((i, val) => {
 			return val + 2;
 		});
 	});
-	$('.three').on('click', function () {
-		$(inptAr).val(function (i, val) {
+	$('.three').on('click', () => {
+		$inputArea.val((i, val) => {
 			return val + 3;
 		});
 	});
-	$('.plus').click(function () {
-		val = $(inptAr).val();
-		$('.input_boof').val(val);
-	});
-	$('.plus').on('click', function () {
-		$(inptAr).val(null);
-		$('.oper').val('+')
-	});
-	$('.plus-minus').on('click', function () {
-		$(inptAr).val(function (i, val) {
-			return -val;
+	$('.four').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 4;
 		});
 	});
-	$('.zero').on('click', function () {
-		$(inptAr).val(function (i, val) {
+	$('.five').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 5;
+		});
+	});
+	$('.six').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 6;
+		});
+	});
+	$('.seven').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 7;
+		});
+	});
+	$('.eight').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 8;
+		});
+	});
+	$('.nine').on('click', () => {
+		$inputArea.val((i, val) => {
+			return val + 9;
+		});
+	});
+	$('.zero').on('click', () => {
+		$inputArea.val((i, val) => {
 			return val + 0;
 		});
 	});
-	$('.dot').on('click', function () {
-		val = $(inptAr).val();
-		$(inptAr).val(val + '.');
+	$('.div').on('click', () => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
+	});
+	$('.div').on('click', () => {
+		$inputArea.val(null);
+		$inputOper.val('/')
+	});
+	$('.mult').on('click', () => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
+	});
+	$('.mult').on('click', () => {
+		$inputArea.val(null);
+		$inputOper.val('*')
+	});
+	$('.minus').on('click', () => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
+	});
+	$('.minus').on('click', () => {
+		$inputArea.val(null);
+		$inputOper.val('-')
+	});
+	$('.plus').on('click', () => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
+	});
+	$('.plus').on('click', () => {
+		$inputArea.val(null);
+		$inputOper.val('+')
+	});
+	$('.plus-minus').on('click', () => {
+		$inputArea.val((i, val) => {
+			return -val;
+		});
+	});
+	$('.sqr').click(() => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
 	});
 	$('.sqr').on('click', () => {
-		y = Number($('.input_area').val())
-		$('.input_area').val(y ** 2)
+		$inputOper.val('sqr');
+	});
+	$('.sqr').on('click', () => {
+		y = Number($inputArea.val())
+		$inputArea.val(y ** 2)
 	})
+	$('.sqrt').click(() => {
+		val = $inputArea.val();
+		$inputBoof.val(val);
+	});
 	$('.sqrt').on('click', () => {
-		y = Number($('.input_area').val())
-		$('.input_area').val(Math.sqrt(y))
+		$inputOper.val('sqrt')
+	});
+	$('.sqrt').on('click', () => {
+		y = Number($inputArea.val())
+		$inputArea.val(Math.sqrt(y))
 	})
+	$('.dot').on('click', () => {
+		val = $inputArea.val();
+		dot_state = val.includes('.');
+		if (!dot_state) {
+			if (val == '') {
+				$inputArea.val('0' + '.');
+			} else {
+				$inputArea.val(val + '.');
+			}
+		}
+
+	});
 	$('.equal').on('click', () => {
-		x = Number($('.input_boof').val());
-		y = Number($('.input_area').val());
-		oper = $('.oper').val();
+		x = Number($inputBoof.val());
+		y = Number($inputArea.val());
+		oper = $inputOper.val();
 		switch (oper) {
-			case 'sqr': $('.input_area').val(y ** 2);
+			case 'sqr':
+				$inputArea.val(y ** 2);
 				break;
-			case 'sqrt': $('.input_area').val(Math.sqrt(y));
+			case 'sqrt':
+				$inputArea.val(Math.sqrt(y));
 				break;
-			case '/': $('.input_area').val(x / y);
+			case '/':
+				$inputArea.val(x / y);
 				break;
-			case '*': $('.input_area').val(y * x);
+			case '*':
+				$inputArea.val(x * y);
 				break;
-			case '-': $('.input_area').val(x - y);
+			case '-':
+				$inputArea.val(x - y);
 				break;
-			case '+': $('.input_area').val(y + x);
+			case '+':
+				$inputArea.val(x + y);
 				break;
-			default: $('.input_area').val('Error');
+			default:
+				$inputArea.val(y);
 		}
 	});
-	$('.convert').on('click', function () {
-		x = Number($('.input_area_2').val());
-		selout = $('.sel-out').val();	//Select output
-		selin = $('.sel-in').val();		//Select input	
+	$('.ac').on('click', () => {
+		$inputArea.val(() => {
+			$inputArea.val('');
+			$inputBoof.val('');
+			$inputOper.val('');
+			oper = '';
+			x = 0;
+			y = 0;
+			return '';
+		});
+	});
+	// Time Converter
+	$inputArea1 = $('.input_area_1');
+	$('.convert').on('click', () => {
+		x = Number($inputArea.val());
+		selout = $('.sel-out').val();
+		selin = $('.sel-in').val();
 		if (selin == 'h') {
 			if (selout == 'h') {
-				$('.input_area_1').val(x);
+				$inputArea1.val(x);
 			} else if (selout == 'm') {
-				$('.input_area_1').val(x * 60);
+				$inputArea1.val(x * 60);
 			} else if (selout == 's') {
-				$('.input_area_1').val((x * 60) * 60);
-			} else $('.input_area_1').val('Ошибка');
+				$inputArea1.val((x * 60) * 60);
+			} else $inputArea1.val('Error');
 		};
 		if (selin == 'm') {
 			if (selout == 'h') {
-				$('.input_area_1').val(x / 60);
+				$inputArea1.val(x / 60);
 			} else if (selout == 'm') {
-				$('.input_area_1').val(x);
+				$inputArea1.val(x);
 			} else if (selout == 's') {
-				$('.input_area_1').val(x * 60);
-			} else $('.input_area_1').val('Ошибка');
+				$inputArea1.val(x * 60);
+			} else $inputArea1.val('Error');
 		}
 		if (selin == 's') {
 			if (selout == 'h') {
-				$('.input_area_1').val((x / 60) / 60);
+				$inputArea1.val((x / 60) / 60);
 			} else if (selout == 'm') {
-				$('.input_area_1').val(x / 60);
+				$inputArea1.val(x / 60);
 			} else if (selout == 's') {
-				$('.input_area_1').val(x);
-			} else $('.input_area_1').val('Ошибка');
+				$inputArea1.val(x);
+			} else $inputArea1.val('Error');
 		}
 	});
+	// Password Generator
 	const $pass_dic = "1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	const $dic_size = $pass_dic.length - 1;
 	const $pass_text = $('#pass_text');
@@ -214,6 +239,7 @@ $(document).ready(function () {
 			$copy_mess.html("Copied")
 		}
 	})
+	// BMI
 	const bmi_text = $('#bmi_text')
 	const bmiArr = ['Underweight', 'Normal', 'Overweight', 'Obesity']
 	let bmi_underweight = $('#bmi_underweight')

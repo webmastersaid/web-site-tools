@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
 *,
 *:before,
 *:after {
@@ -10,6 +12,7 @@
 }
 
 body {
+	font-family: 'Kdam Thmor Pro', sans-serif;
 	background-color: #1E2424;
 	background-image: url(../img/background.jpg);
 	background-size: cover;
@@ -33,6 +36,18 @@ a {
 a:hover {
 	transition: all 0.3s ease 0s;
 	color: skyblue;
+}
+
+.fs-20 {
+	font-size: 20px;
+}
+
+.fs-24 {
+	font-size: 24px;
+}
+
+.fs-40 {
+	font-size: 40px;
 }
 
 div .button_click {
